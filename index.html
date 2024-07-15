@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memocord</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2c2f33;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #23272a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #7289da;
+        }
+        .command-list {
+            list-style: none;
+            padding: 0;
+        }
+        .command-list li {
+            background: #2c2f33;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 5px solid #7289da;
+            border-radius: 5px;
+        }
+        .command-list li h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .command-list li p {
+            margin: 5px 0 0;
+            color: #99aab5;
+        }
+        .logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+            border-radius: 100%;
+        }
+        .mascot {
+            display: block;
+            margin: 20px auto;
+            max-width: 300px;
+            border-radius: 20%;
+        }
+        #search {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .screenshots {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .screenshots img {
+            max-width: 100%;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.imgur.com/oFFA9Ky.png" alt="Bot Logo" class="logo">
+        <h1>Memocord</h1>
+        <p>Welcome to the description page of Memocord. Memocord allows users to create posts and share them via ID with each other. You can also view all posts using specific commands. Below you'll find a list of commands and their descriptions.</p>
+        <img src="https://i.imgur.com/nRn53rU.jpg" alt="Memo-chan" class="mascot">
+        <input type="text" id="search" placeholder="Search commands...">
+        <ul class="command-list" id="commandList">
+            <li>
+                <h2>/help</h2>
+                <p>Displays a list of available commands and their usage.</p>
+            </li>
+            <li>
+                <h2>/info</h2>
+                <p>Provides information about Memocord.</p>
+            </li>
+            <li>
+                <h2>/ownerinfo</h2>
+                <p>See how many servers the bot is currently in.</p>
+            </li>
+            <li>
+                <h2>/ping</h2>
+                <p>Checks the bot's latency.</p>
+            </li>
+            <li>
+                <h2>/post create</h2>
+                <p>Creates a new post.</p>
+            </li>
+            <li>
+                <h2>/post comment</h2>
+                <p>Adds a comment to a post.</p>
+            </li>
+            <li>
+                <h2>/post delete</h2>
+                <p>Deletes a specified post.</p>
+            </li>
+            <li>
+                <h2>/post homepage</h2>
+                <p>Shows the homepage with all posts.</p>
+            </li>
+            <li>
+                <h2>/post view</h2>
+                <p>Views a post using its ID.</p>
+            </li>
+            <li>
+                <h2>/post rules</h2>
+                <p>Displays the rules for posting.</p>
+            </li>
+            <li>
+                <h2>/post color</h2>
+                <p>Shows you a site to grab a color hex code.</p>
+            </li>
+        </ul>
+        <div class="screenshots">
+            <h2>Screenshots</h2>
+            <img src="https://i.imgur.com/060kvxf.png" alt="Screenshot 1">
+            <img src="https://i.imgur.com/ykMhZjC.png" alt="Screenshot 2">
+            <img src="https://i.imgur.com/VDKXs7q.png" alt="Screenshot 3">
+            <!-- Add more screenshots as needed -->
+        </div>
+    </div>
+    <script>
+        document.getElementById('search').addEventListener('input', function() {
+            let filter = this.value.toLowerCase();
+            let commands = document.querySelectorAll('.command-list li');
+            commands.forEach(command => {
+                let text = command.textContent.toLowerCase();
+                if (text.includes(filter)) {
+                    command.style.display = '';
+                } else {
+                    command.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
